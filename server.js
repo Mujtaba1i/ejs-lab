@@ -36,7 +36,7 @@ const RESTAURANT = {
     { 
       id: 4,
       name: 'Pumpkin Pi Squared',
-      price: 3.14,
+      price: 3.141,
       rating: 5,
       category: 'desserts',
       details: 'A delightful pumpkin dessert, squared and spiced to perfection.'
@@ -61,10 +61,10 @@ app.get('/menu',(req,res)=>{
     res.render('menu.ejs',{menu:RESTAURANT.menu})
 })
 
-app.get('/menu/:reqCatagory',(req,res)=>{
-    const foundFood = RESTAURANT.menu.filter(item => {return item.category === req.params.reqCatagory})
+app.get('/menu/:reqCategory',(req,res)=>{
+    const foundFood = RESTAURANT.menu.filter(item => {return item.category === req.params.reqCategory})
     // console.log(foundFood[0].category)
-    res.render('food.ejs',{foundFood,category: req.params.reqCatagory})
+    res.render('food.ejs',{foundFood,category: req.params.reqCategory})
 })
 
 
